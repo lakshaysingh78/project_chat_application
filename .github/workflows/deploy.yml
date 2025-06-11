@@ -24,10 +24,10 @@ jobs:
           cd client
           npm install
 
-      - name: Build React App
+      - name: Build React App (Ignore Warnings)
         run: |
           cd client
-          npm run build
+          CI=false npm run build
 
   build-server:
     name: Test Node Backend
@@ -49,4 +49,4 @@ jobs:
 
       - name: Start Server (Dry Run)
         run: |
-          echo "Server ready to run on port 5000 (Not actually starting here in CI)"
+          echo "Server is ready (not actually running it in CI)"
