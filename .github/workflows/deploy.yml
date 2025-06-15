@@ -29,6 +29,14 @@ jobs:
           cd client
           CI=false npm run build
 
+      - name: 🚀 Serve React with PM2
+        run: |
+          cd client
+          pm2 delete react-app || true
+          pm2 serve build 3000 --name react-app
+          pm2 save
+    
+      
 
       - name: 📦 Install Backend Dependencies
         run: |
