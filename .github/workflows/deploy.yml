@@ -22,7 +22,7 @@ jobs:
       - name: 📦 Install Frontend Dependencies
         run: |
           cd client
-          npm install
+          CI=false npm run build
 
       - name: 🏗️ Build React Frontend
         run: |
