@@ -8,9 +8,7 @@ on:
 jobs:
   deploy:
     name: Auto Deploy on EC2 via Self-Hosted Runner
-    runs-on: self-hosted
-    labels: 
-      - label-1
+    runs-on: [self-hosted, Linux, X64, label-1]
 
     steps:
       - name: ⏬ Checkout Repo
